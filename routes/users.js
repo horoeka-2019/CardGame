@@ -14,6 +14,16 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/addPlayer', (req, res) => {
+  res.render('addPlayer')
+})
+
+router.post('/addPlayer', (req, res) => {
+  db
+  res.redirect('/')
+})
+
+
 router.get('/start', (req, res) => {
   res.render('start')
 })

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EDA Phase 1 Express Boilerplate</title>
+    <title>List of players</title>
   </head>
   <body>
+    <h1> Let's play!</h1>
     <ul>
     {{#each users}}
-      <li>{{name}} ({{email}})</li>
+      <li>{{name}}</li>
     {{/each}}
     </ul>
+    <a href='/addPlayer'> Add Player</a> <a href='/start'> Start Game</a>
   </body>
 </html>

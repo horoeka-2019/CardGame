@@ -17,7 +17,7 @@ exports.seed = function(knex) {
                 { id: 11, cardname: 'Jack', drink: 'Make a rule', do: 'do1', image: '/images/c11.png' },
                 { id: 12, cardname: 'Queen', drink: 'Questions: questions must be answerd by questions. First to not question', do: 'do1', image: '/images/c12.png' },
                 { id: 13, cardname: 'King', drink: 'Pour some of your drink into the circle', do: 'do1', image: '/image13' },
-                { id: 14, cardname: 'Joker', drink: `Toilet card, or you can smoke if you're a smoker` do: 'do1', image: '/image14' }
+                { id: 14, cardname: 'Joker', drink: `Toilet card, or you can smoke if you're a smoker`, do: 'do1', image: '/image14' }
             ]);
         });
 };

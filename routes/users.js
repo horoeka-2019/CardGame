@@ -19,7 +19,7 @@ router.get('/addPlayer', (req, res) => {
 })
 
 router.post('/addPlayer', (req, res) => {
-  db
+  db.insertPlayer(req.body.name)
   res.redirect('/')
 })
 

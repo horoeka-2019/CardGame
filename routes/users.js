@@ -14,4 +14,8 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/start', (req, res) => {
+  res.render('start')
+})
+
 module.exports = router

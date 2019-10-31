@@ -16,8 +16,8 @@ exports.seed = function (knex) {
         { id: 10, cardname: '10', drink: 'Categories: Pick a category such as Basketball. Around the circle everyone has to give a word which fits the category like 3-pointer and Slam Dunk', do: 'do1', image: '/images/c10.png' },
         { id: 11, cardname: 'Jack', drink: 'Make a rule', do: 'do1', image: '/images/c11.png' },
         { id: 12, cardname: 'Queen', drink: 'Questions: questions must be answerd by questions. First to not question', do: 'do1', image: '/images/c12.png' },
-        { id: 13, cardname: 'King', drink: 'Pour some of your drink into the circle', do: 'do1', image: '/image13' },
-        { id: 14, cardname: 'Joker', drink: `Toilet card, or you can smoke if you're a smoker`, do: 'do1', image: '/image14' }
+        { id: 13, cardname: 'King', drink: 'Pour some of your drink into the circle', do: 'do1', image: '/images/d02.png' },
+        { id: 14, cardname: 'Joker', drink: `Toilet card, or you can smoke if you're a smoker`, do: 'do1', image: '/images/d03.png' }
       ])
     })
 }

@@ -4,11 +4,11 @@ exports.seed = function(knex) {
         .then(function() {
             // Inserts seed entries
             return knex('cards').insert([
-                { id: 1, cardname: 'Ace', drink: 'Waterfall!', do: 'do1', image: '/image1' },
-                { id: 2, cardname: '2', drink: 'Choose who drinks!', do: 'do1', image: '/image2' },
-                { id: 3, cardname: '3', drink: 'Three is me', do: 'do1', image: '/image3' },
-                { id: 4, cardname: '4', drink: 'Thumb Master', do: 'do1', image: '/image4' },
-                { id: 5, cardname: '5', drink: 'No pronouns!', do: 'do1', image: '/image5' },
+                { id: 1, cardname: 'Ace', drink: 'Waterfall!', do: 'do1', image: '/images/c01.png' },
+                { id: 2, cardname: '2', drink: 'Choose who drinks!', do: 'do1', image: '/images/c02.png' },
+                { id: 3, cardname: '3', drink: 'Three is me', do: 'do1', image: '/images/c03.png' },
+                { id: 4, cardname: '4', drink: 'Thumb Master', do: 'do1', image: '/images/c04.png' },
+                { id: 5, cardname: '5', drink: 'No pronouns!', do: 'do1', image: '/images/c05.png' },
                 { id: 6, cardname: '6', drink: 'No pointing!', do: 'do1', image: '/image6' },
                 { id: 7, cardname: '7', drink: 'Point to heaven', do: 'do1', image: '/image7' },
                 { id: 8, cardname: '8', drink: `8 if for you and a Mate`, do: 'do1', image: '/image8' },

@@ -7,7 +7,7 @@
     "knex": "knex",
     "dev": "nodemon index",
     "start": "node index",
-    "test": "jest"
+    "test": "jest --watchAll --verbose --noStackTrace"
   },
   "repository": {
     "type": "git",

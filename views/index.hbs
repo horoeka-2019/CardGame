@@ -6,6 +6,15 @@
   <body>
     <h1> Let's play!</h1>
   
-    <a href='/addPlayer'> Add Player</a> <a href='/start'> Start Game</a>
+  <div id="wrapper1">
+    <div id="playerList"><ul>
+      {{#each players}}
+        <li>{{playername}}</li><br>
+      {{/each}}
+      </ul>
+    </div>
+  </div>
+    
+    <a href='/addPlayer'> Add Player</a><br><a href='/start'> Start Game</a>
   </body>
 </html>

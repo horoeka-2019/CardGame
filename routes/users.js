@@ -6,8 +6,8 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
   db.getUsers()
-    .then(users => {
-      res.render('index', { users: users })
+    .then(playername => {
+      res.render('index', { players: playername })
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
@@ -15,29 +15,41 @@ router.get('/', (req, res) => {
 })
 
 router.get('/addPlayer', (req, res) => {
-  res.render('addPlayer')
+  res.render('addPlayer', {})
 })
 
 router.post('/addPlayer', (req, res) => {
-  db.insertPlayer(req.body.name).then(() => db.getUsers()).then(users => console.log(users))
-    .then(res.render('playersList'))
+  db.insertPlayer(req.body.name).then(res.redirect('/'))
 })
 
+const totalCount = 16
+let count = 1
 router.get('/card/:playerId', (req, res) => {
-  const cardId = getRandomInt(1, 15)
-  const playerId = req.params.playerId
-  db.getUser(playerId)
-    .then(player => {
-      const playerName = player.playername
-      db.getCard(cardId)
-        .then(card => {
+  if (count > totalCount) {
+    res.redirect('/')
+  } else {
+    const cardId = getRandomInt(1, 15)
+
+    const playerId = Number(req.params.playerId)
+    const nextPlayerId = playerId + 1
+
+    if (playerId < 6) {
+      db.getUser(playerId).then(player => {
+        const playerName = player.playername
+        db.getCard(cardId).then(card => {
           const cardWithPlayerName = {
+            playerId: nextPlayerId,
             player: playerName,
             card: card
           }
+          count++
           res.render('card', { card: cardWithPlayerName })
         })
-    })
+      })
+    } else {
+      res.redirect('/card/1')
+    }
+  }
 })
 
 function getRandomInt (min, max) {

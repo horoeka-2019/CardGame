@@ -1,13 +1,15 @@
 <div>
-    <div class="wrapper">
-        <div id="player">{{card.player}}</div>
-        <div class="cardImage"><img src={{card.card.image}} alt="Card Name"></div>
-        <div id="drink">
-            <div>{{card.card.drink}}</div>
+    </div id="app">
+        <div id="wrapper2">
+            <div id="player">{{card.player}}</div>
+            <div id="cardImage"><img src={{card.card.image}} alt="Card Name"></div>
+            <div id="drink">
+                <div>{{card.card.drink}}</div>
+            </div>
+            <div id="do">
+                <div>{{card.card.do}}</div>
+            </div>
+            <a id="next" href='/card/{{card.playerId}}'>Next Player</a>
         </div>
-        <div id="do">
-            <div>{{card.card.do}}</div>
-        </div>
-        <a href="/"></a>
-    </div>
+    </div> 
 </div>

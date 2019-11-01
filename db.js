@@ -5,7 +5,8 @@ const connection = require('knex')(config)
 module.exports = {
   getUser: getUser,
   getUsers: getUsers,
-  getCard: getCard
+  getCard: getCard,
+  insertPlayer: insertPlayer
 }
 
 function getUsers (db = connection) {
@@ -25,3 +26,8 @@ function getCard (cardId, db = connection) {
     .where('id', cardId)
     .first()
 }
+
+function insertPlayer (playername, db = connection) {
+  return db('players').insert({ playername: playername })
+}
+

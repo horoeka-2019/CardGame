@@ -14,6 +14,15 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/addPlayer', (req, res) => {
+  res.render('addPlayer')
+})
+
+router.post('/addPlayer', (req, res) => {
+  db.insertPlayer(req.body.name).then(() => db.getUsers()).then(users => console.log(users))
+    .then(res.render('playersList'))
+})
+
 router.get('/card/:playerId', (req, res) => {
   const cardId = getRandomInt(1, 15)
   const playerId = req.params.playerId

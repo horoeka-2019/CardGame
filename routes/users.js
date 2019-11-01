@@ -24,13 +24,13 @@ router.post('/addPlayer', (req, res) => {
 })
 
 router.get('/card/:playerId', (req, res) => {
-  const cardId = getRandomInt(1, 5)
+  const cardId = getRandomInt(1, 15)
   const playerId = req.params.playerId
   db.getUser(playerId)
     .then(player => {
+      const playerName = player.playername
       db.getCard(cardId)
         .then(card => {
-          const playerName = player.playername
           const cardWithPlayerName = {
             player: playerName,
             card: card
@@ -49,5 +49,10 @@ function getRandomInt (min, max) {
 router.get('/start', (req, res) => {
   res.render('start')
 })
+
+function consoleLog (user) {
+  console.log(user)
+  return Promise.resolve(user)
+}
 
 module.exports = router

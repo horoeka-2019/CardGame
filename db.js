@@ -13,10 +13,12 @@ function getUsers (db = connection) {
 }
 
 function getUser (id, db = connection) {
+  console.log(id)
   return db('players')
-    .where('id', id)
+    .where('players.id', Number(id))
     .first()
 }
+
 
 function getCard (cardId, db = connection) {
   return db('cards')

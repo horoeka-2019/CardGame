@@ -6,6 +6,12 @@
   <body>
     <h1> Let's play!</h1>
   
+  <ul>
+    {{#each players}}
+      <li>{{playername}}</li>
+    {{/each}}
+    </ul>
+    
     <a href='/addPlayer'> Add Player</a> <a href='/start'> Start Game</a>
   </body>
 </html>

@@ -6,8 +6,8 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
   db.getUsers()
-    .then(users => {
-      res.render('index', { users: users })
+    .then(playername => {
+      res.render('index', { players: playername })
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
@@ -15,12 +15,11 @@ router.get('/', (req, res) => {
 })
 
 router.get('/addPlayer', (req, res) => {
-  res.render('addPlayer')
+  res.render('addPlayer', {})
 })
 
 router.post('/addPlayer', (req, res) => {
-  db.insertPlayer(req.body.name).then(() => db.getUsers()).then(users => console.log(users))
-    .then(res.render('playersList'))
+  db.insertPlayer(req.body.name).then(res.redirect('/'))
 })
 
 router.get('/card/:playerId', (req, res) => {

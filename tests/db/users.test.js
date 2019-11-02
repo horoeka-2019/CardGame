@@ -11,7 +11,7 @@ beforeEach(() => {
 afterEach(() => testEnv.cleanup(testDb));
 
 describe("DB Users table tests", () => {
-  it.only("getUsers gets all users", () => {
+  it("getUsers gets all users", () => {
     // Arrange
     const expected = 4;
 

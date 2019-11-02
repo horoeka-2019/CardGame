@@ -29,6 +29,24 @@ describe("route tests", () => {
       });
   });
 
+  it("get / return 2 users", done => {
+    // Arrange
+    const expected = "test user 2test user 4";
+
+    // Act
+    request(routes)
+      .get("/")
+      .end((err, res) => {
+        // const actual = res.status;
+        const $ = cheerio.load(res.text);
+        const actual = $("#playerList ul li").text();
+        // Assert
+        expect(err).toBeNull();
+        expect(actual).toBe(expected);
+        done();
+      });
+  });
+
   it("get /start return start page", done => {
     // Arrange
     const expected = "Add More Users";
